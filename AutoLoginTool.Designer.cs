@@ -37,10 +37,11 @@ namespace AutoLoginTool.View
             this.connectionInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.connectionInfoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.iPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.connectionInfoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.connectionInfoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,10 +84,6 @@ namespace AutoLoginTool.View
             this.dataGridView1.Size = new System.Drawing.Size(505, 335);
             this.dataGridView1.TabIndex = 10;
             // 
-            // connectionInfoBindingSource2
-            // 
-            this.connectionInfoBindingSource2.DataSource = typeof(ConnectionInfo);
-            // 
             // iPDataGridViewTextBoxColumn
             // 
             this.iPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -110,11 +107,26 @@ namespace AutoLoginTool.View
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.Width = 121;
             // 
+            // connectionInfoBindingSource2
+            // 
+            this.connectionInfoBindingSource2.DataSource = typeof(ConnectionInfo);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(523, 179);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 82);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "檢視設定檔案";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AutoLoginTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 361);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -141,6 +153,7 @@ namespace AutoLoginTool.View
         private System.Windows.Forms.DataGridViewTextBoxColumn iPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
     }
 }
 

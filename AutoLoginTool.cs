@@ -2,6 +2,7 @@
 using AutoLoginTool.Model;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -41,7 +42,7 @@ namespace AutoLoginTool.View
                 ctrl.WriteBat(_connectionInfo, model.BatPath);
                 MessageBox.Show("儲存完成");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -61,10 +62,17 @@ namespace AutoLoginTool.View
                     MessageBox.Show("設定檔移除成功");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string argument = "/select, \"" + model.BatPath + "\"";
+
+            Process.Start("explorer.exe", argument);
         }
     }
 }
