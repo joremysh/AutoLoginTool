@@ -17,7 +17,7 @@ namespace AutoLoginTool.View
             ctrl = new ControlClass();
             _connectionInfo = new BindingList<ConnectionInfo>();
             SetConnectInfos(_connectionInfo);
-            string batPath = model.BatPath;
+            string batPath = model.GetBatPath();
 #if DEBUG
             batPath = @"D:\net use.bat";
 #endif
@@ -39,7 +39,7 @@ namespace AutoLoginTool.View
         {
             try
             {
-                ctrl.WriteBat(_connectionInfo, model.BatPath);
+                ctrl.WriteBat(_connectionInfo, model.GetBatPath());
                 MessageBox.Show("儲存完成");
             }
             catch (Exception ex)
@@ -52,13 +52,13 @@ namespace AutoLoginTool.View
         {
             try
             {
-                if (!File.Exists(model.BatPath))
+                if (!File.Exists(model.GetBatPath()))
                 {
                     MessageBox.Show("找不到設定檔，此電腦可能尚未設定過，或者是設定檔已經移除");
                 }
                 else
                 {
-                    File.Delete(model.BatPath);
+                    File.Delete(model.GetBatPath());
                     MessageBox.Show("設定檔移除成功");
                 }
             }
@@ -70,7 +70,7 @@ namespace AutoLoginTool.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string argument = "/select, \"" + model.BatPath + "\"";
+            string argument = "/select, \"" + model.GetBatPath() + "\"";
 
             Process.Start("explorer.exe", argument);
         }

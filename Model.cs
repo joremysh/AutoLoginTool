@@ -7,12 +7,9 @@ namespace AutoLoginTool.Model
 {
     public class ModelClass
     {
-        public string BatPath
+        public string GetBatPath()
         {
-            get
-            {
-                return StartupDir + @"\netuse.bat";
-            }
+            return StartupDir + @"\netuse.bat";
         }
 
         [DllImport("shell32.dll")]
