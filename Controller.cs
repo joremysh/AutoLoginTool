@@ -10,7 +10,7 @@ namespace AutoLoginTool.Controller
         {
             BindingList<ConnectionInfo> res = new BindingList<ConnectionInfo>();
             ConnectionInfo ci;
-            using (StreamReader sr =new StreamReader(batPath))
+            using (StreamReader sr = new StreamReader(batPath))
             {
                 while (sr.Peek() >= 0)
                 {
@@ -19,7 +19,7 @@ namespace AutoLoginTool.Controller
                     {
                         continue;
                     }
-                    if(line.Contains("net use"))
+                    if (line.Contains("net use"))
                     {
                         ci = new ConnectionInfo();
                         int indStart = line.IndexOf("\\") + 2;
@@ -41,9 +41,9 @@ namespace AutoLoginTool.Controller
         public void WriteBat(BindingList<ConnectionInfo> connInfoList, string batPath)
         {
             File.Delete(batPath);
-            using(StreamWriter sw=new StreamWriter(batPath))
+            using (StreamWriter sw = new StreamWriter(batPath))
             {
-                foreach(ConnectionInfo ci in connInfoList)
+                foreach (ConnectionInfo ci in connInfoList)
                 {
                     sw.WriteLine(string.Format(@"net use /delete \\{0}", ci.IP));
                     sw.WriteLine(string.Format(@"net use \\{0} /user:{1} {2}", ci.IP, ci.UserName, ci.Password));
